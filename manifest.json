@@ -1,0 +1,20 @@
+{
+    "name": "Chrome Comment Detector",
+    "version": "1.0",
+    "description": "See sneaky comments hidden in webpages!",
+    "manifest_version": 2,
+    "permissions": [
+      "activeTab"
+    ],
+  	"background": {
+    	"scripts": ["background.js"],
+    	"persistent": false
+  	},
+  	"browser_action": {
+    	"default_title": "View comments in page.",
+    	"default_popup": "commentList.html"
+  	},
+  	"web_accessible_resources": [
+    	"row.html"
+	]
+}
