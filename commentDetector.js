@@ -1,4 +1,10 @@
-let version = 1
+var version = 1
+
+var _log = []
+
+function logMessage(msg){
+    _log.push(msg);
+}
 
 var constructCommentObjectFrom = function(node){
   var commentBaseString = node.nodeValue;
@@ -57,6 +63,8 @@ var parseComment = function(commentNode){
   return out
 };
 
+
+
 var commentNodes = findComments(document);
 var comments = [];
 
@@ -64,9 +72,10 @@ for (var i = commentNodes.length - 1; i >= 0; i--) {
   comments.push(constructCommentObjectFrom(commentNodes[i]));
 }
 
-console.log('Chrome Comment Detector (C) 2020 by Lucas Klein');
-console.log('https://github.com/Luke-k-dev');
-console.log("Using version: ", version)
-console.log('Preparing Comments...');
-console.log(comments)
-comments
+logMessage('Chrome Comment Detector (C) 2020 by Lucas Klein');
+logMessage('https://github.com/Luke-k-dev');
+logMessage("Using version: " + version)
+logMessage('Preparing Comments...');
+logMessage("running on" + window.href);
+var out = [comments, _log];
+out
